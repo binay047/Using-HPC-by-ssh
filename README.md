@@ -146,11 +146,11 @@ Example:
 
 If you are already inside the directory on your PC where you want the file, use `.`:
 
-    scp dell@100.104.182.30:/home/dell/DFT/scf.out .
+    scp dell@100.104.182.30:/home/dell/DFT/scf.out 
 
 For a folder:
 
-    scp -r dell@100.104.182.30:/home/dell/DFT/Tc2C .
+    scp -r dell@100.104.182.30:/home/dell/DFT/Tc2C 
 
 ### 7. Monitoring the HPC
 
@@ -182,7 +182,7 @@ Check disk space:
 
 Check the size of the current directory:
 
-    du -sh .
+    du -sh 
 
 Check the size of a specific directory:
 
