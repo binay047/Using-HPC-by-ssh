@@ -156,22 +156,6 @@ Detailed CPU information:
 
     lscpu
 
-Check memory usage:
-
-    free -h
-
-Check disk space:
-
-    df -h
-
-Check the size of the current directory:
-
-    du -sh 
-
-Check the size of a specific directory:
-
-    du -sh directory_name
-
 ### 8. Monitoring Quantum ESPRESSO Calculations
 
 Check whether `pw.x` is running:
@@ -199,47 +183,8 @@ Check other Quantum ESPRESSO programs:
 
 **Note:** `pgrep -c ph.x` gives the number of `ph.x` processes. It should not automatically be interpreted as the exact number of CPU cores being used because MPI and OpenMP calculations can use different process/thread configurations.
 
-### 9. Running Quantum ESPRESSO
 
-Run an SCF calculation:
-
-    pw.x < scf.in > scf.out
-
-Run a relaxation:
-
-    pw.x < relax.in > relax. out
-
-Run a phonon calculation:
-
-    ph.x < ph.in > ph.out
-
-Run `q2r.x`:
-
-    q2r.x < q2r.in > q2r.out
-
-Run `matdyn.x`:
-
-    matdyn.x < matdyn.in > matdyn.out
-
-### 10. Running Quantum ESPRESSO with MPI
-
-Run `pw.x` using 4 MPI processes:
-
-    mpirun -np 4 pw.x < scf.in > scf.out
-
-Run `ph.x` using 4 MPI processes:
-
-    mpirun -np 4 ph.x < ph.in > ph.out
-
-Run `q2r.x` using 4 MPI processes:
-
-    mpirun -np 4 q2r.x < q2r.in > q2r.out
-
-Run `matdyn.x` using 4 MPI processes:
-
-    mpirun -np 4 matdyn.x < matdyn.in > matdyn.out
-
-### 11. Monitoring Calculation Output
+### 9. Monitoring Calculation Output
 
 Continuously monitor an output file:
 
@@ -259,10 +204,6 @@ Show the first 20 lines:
 
     head -20 scf. out
 
-Search for convergence:
-
-    grep "convergence has been achieved" scf. out
-
 Search for total energy:
 
     grep "!" scf. out
@@ -279,7 +220,7 @@ Search for warnings:
 
     grep -i "warning" scf. out
 
-### 12. Checking Whether a Calculation Has Finished
+### 10. Checking Whether a Calculation Has Finished
 
 For most Quantum ESPRESSO calculations:
 
@@ -301,7 +242,7 @@ For a relaxation, you can also check:
 
     grep "End final coordinates" relax. out
 
-### 13. Running Long Calculations with `nohup`
+### 11. Running Long Calculations with `nohup`
 
 If you want to run a calculation in the background:
 
@@ -319,7 +260,7 @@ Monitor the output:
 
     tail -f scf. out
 
-### 14. Using `screen`
+### 12. Using `screen`
 
 `screen` is useful for keeping a terminal session alive during long calculations.
 
@@ -340,13 +281,13 @@ You can now disconnect from SSH.
 
 List screen sessions:
 
-    screen -ls
+    screen ls
 
 Reconnect to the session:
 
     screen -r qe
 
-### 15. Using `tmux`
+### 13. Using `tmux`
 
 Start a tmux session:
 
@@ -369,85 +310,8 @@ Reconnect:
 
     tmux attach -t qe
 
-### 16. Finding Files
 
-Find a specific file:
-
-    find. -name "scf.in"
-
-Find all Quantum ESPRESSO output files:
-
-    find. -name "*.out"
-
-Find directories:
-
-    find. -type d -name "out"
-
-### 17. Searching Inside Files
-
-Search for a word:
-
-    grep "Fermi" scf. out
-
-Case-insensitive search:
-
-    grep -i "fermi" scf. out
-
-Search recursively:
-
-    grep -R "JOB DONE".
-
-### 18. Compressing Calculation Files
-
-Compress an entire calculation directory:
-
-    tar -czvf calculation.tar.gz calculation/
-
-Extract a `.tar.gz` file:
-
-    tar -xzvf calculation.tar.gz
-
-View the contents without extracting:
-
-    tar -tzvf calculation.tar.gz
-
-Compressing a large calculation directory before using `scp` can make file transfer easier and reduce the number of individual files that need to be transferred.
-
-### 19. Checking Disk Space
-
-Check available disk space:
-
-    df -h
-
-Check the size of a calculation directory:
-
-    du -sh calculation/
-
-Check the size of directories in the current location:
-
-    du -h --max-depth=1 | sort -h
-
-### 20. Checking Memory
-
-Check memory usage:
-
-    free -h
-
-Detailed memory information:
-
-    cat /proc/meminfo
-
-### 21. Checking CPU Information
-
-Show CPU information:
-
-    lscpu
-
-Show the number of available CPU cores:
-
-    nproc
-
-### 22. Checking User and System Information
+### 14. Checking User and System Information
 
 Check the current user:
 
@@ -478,7 +342,7 @@ Check other Quantum ESPRESSO executables:
     which bands.x
     which dos.x
 
-### 24. Running Shell Scripts
+### 15. Running Shell Scripts
 
 Create a script:
 
@@ -498,104 +362,5 @@ Run it:
 
     ./run.sh
 
-
-### 25. Quick Reference
-
-#### SSH Login
-
-    ssh dell@100.104.182.30
-
-#### PC → HPC: Single File
-
-    scp /path/to/file/filename dell@100.104.182.30:/path/to/destination/
-
-#### PC → HPC: Folder
-
-    scp -r /path/to/folder dell@100.104.182.30:/path/to/destination/
-
-#### HPC → PC: Single File
-
-    scp dell@100.104.182.30:/path/to/file/filename /path/to/local/destination/
-
-#### HPC → PC: Folder
-
-    scp -r dell@100.104.182.30:/path/to/folder /path/to/local/destination/
-
-#### Monitor HPC
-
-    top
-
-#### Monitor `pw.x`
-
-    pgrep -a pw.x
-    pgrep -c pw.x
-
-#### Monitor `ph.x`
-
-    pgrep -a ph.x
-    pgrep -c ph.x
-
-#### Monitor Output
-
-    tail -f scf. out
-
-#### Check Calculation Completion
-
-    grep "JOB DONE" scf. out
-
-#### CPU Information
-
-    nproc
-    lscpu
-
-#### Memory
-
-    free -h
-
-#### Disk Space
-
-    df -h
-
-#### Run QE with MPI
-
-    mpirun -np 4 pw.x < scf.in > scf.out
-
-#### Run Long Calculation
-
-    screen -S qe
-
-or:
-
-    tmux new -s qe
-
-### 26. Disconnecting from HPC
-
-When all work is finished, disconnect from the HPC using:
-
-    exit
-
-Alternatively:
-
-    Ctrl + D
-
-You will return to the terminal of your local PC.
-
-## Important Notes
-
-- **Note:** `scp` commands for transferring files are normally executed from the **local PC terminal**. You do not need to SSH into the HPC first.
-
-- **Note:** Replace `dell@100.104.182.30` with the correct username and IP address of your HPC.
-
-- **Note:** `pgrep -c ph.x` counts the number of `ph.x` processes. It does not necessarily represent the exact number of CPU cores being used by the calculation.
-
-- **Note:** For long calculations, use `screen`, `tmux`, `nohup`, or the HPC's job scheduler instead of relying on a normal SSH terminal.
-
-- **Note:** If the HPC uses a scheduler such as SLURM or PBS, large production calculations should normally be submitted through the scheduler rather than run directly on the login node.
-
-- **Note:** Avoid using `rm -rf` unless you are completely certain about the path and files being removed.
-
-- **Note:** Keep important calculation results backed up on another system.
-
-- **Note:** For large calculations, it is often convenient to compress the calculation directory using `tar` before transferring it with `scp`.
 
 **Congratulations! You can now connect to the HPC, transfer files between your PC and HPC, run Quantum ESPRESSO calculations, monitor calculations, and download results for further analysis.**
