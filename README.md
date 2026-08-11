@@ -387,15 +387,15 @@ Find directories:
 
 Search for a word:
 
-    grep "Fermi" scf.out
+    grep "Fermi" scf. out
 
 Case-insensitive search:
 
-    grep -i "fermi" scf.out
+    grep -i "fermi" scf. out
 
 Search recursively:
 
-    grep -R "JOB DONE" .
+    grep -R "JOB DONE".
 
 ### 18. Compressing Calculation Files
 
@@ -478,25 +478,7 @@ Check other Quantum ESPRESSO executables:
     which bands.x
     which dos.x
 
-Check the Quantum ESPRESSO executable:
-
-    pw.x -h
-
-### 24. File Permissions
-
-Make a shell script executable:
-
-    chmod +x script.sh
-
-Run the script:
-
-    ./script.sh
-
-Give the owner read, write, and execute permission:
-
-    chmod 700 script.sh
-
-### 25. Running Shell Scripts
+### 24. Running Shell Scripts
 
 Create a script:
 
@@ -516,33 +498,8 @@ Run it:
 
     ./run.sh
 
-### 26. Basic HPC Workflow
 
-The typical workflow is:
-
-    Local PC
-       |
-       | ssh
-       ↓
-    HPC
-       |
-       | Prepare input files
-       ↓
-    Run Quantum ESPRESSO
-       |
-       | Monitor using top / pgrep / tail
-       ↓
-    Calculation completed
-       |
-       | scp
-       ↓
-    Local PC
-       |
-       | Analyze results
-       ↓
-    XCrySDen / Xmgrace / Python / MATLAB / other tools
-
-### 27. Quick Reference
+### 25. Quick Reference
 
 #### SSH Login
 
@@ -580,11 +537,11 @@ The typical workflow is:
 
 #### Monitor Output
 
-    tail -f scf.out
+    tail -f scf. out
 
 #### Check Calculation Completion
 
-    grep "JOB DONE" scf.out
+    grep "JOB DONE" scf. out
 
 #### CPU Information
 
@@ -611,7 +568,7 @@ or:
 
     tmux new -s qe
 
-### 28. Disconnecting from HPC
+### 26. Disconnecting from HPC
 
 When all work is finished, disconnect from the HPC using:
 
