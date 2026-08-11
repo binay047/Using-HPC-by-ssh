@@ -26,14 +26,6 @@ List files and directories:
 
     ls
 
-List files with detailed information:
-
-    ls -lh
-
-List hidden files:
-
-    ls -la
-
 ### 2. Moving Between Directories
 
 Go into a directory:
@@ -52,10 +44,6 @@ Return to the home directory:
 
     cd 
 
-Show the current directory:
-
-    pwd
-
 ### 3. Creating Directories
 
 Create a directory:
@@ -70,7 +58,7 @@ Remove a directory and its contents:
 
 Copy a file:
 
-    cp file1 file2
+    cp filename1 filename2
 
 Copy a file to another directory:
 
@@ -160,10 +148,6 @@ To see overall CPU and memory usage:
 
 Press `q` to exit `top`.
 
-If `htop` is available:
-
-    htop
-
 Check the total number of available CPU cores:
 
     nproc
@@ -223,7 +207,7 @@ Run an SCF calculation:
 
 Run a relaxation:
 
-    pw.x < relax.in > relax.out
+    pw.x < relax.in > relax. out
 
 Run a phonon calculation:
 
@@ -259,41 +243,41 @@ Run `matdyn.x` using 4 MPI processes:
 
 Continuously monitor an output file:
 
-    tail -f scf.out
+    tail -f scf. out
 
 For a phonon calculation:
 
-    tail -f ph.out
+    tail -f ph. out
 
 Press `Ctrl+C` to stop monitoring the file. This does not stop the calculation itself.
 
 Show the last 20 lines:
 
-    tail -20 scf.out
+    tail -20 scf. out
 
 Show the first 20 lines:
 
-    head -20 scf.out
+    head -20 scf. out
 
 Search for convergence:
 
-    grep "convergence has been achieved" scf.out
+    grep "convergence has been achieved" scf. out
 
 Search for total energy:
 
-    grep "!" scf.out
+    grep "!" scf. out
 
 Search for Fermi energy:
 
-    grep "the Fermi energy" scf.out
+    grep "the Fermi energy" scf. out
 
 Search for errors:
 
-    grep -i "error" scf.out
+    grep -i "error" scf. out
 
 Search for warnings:
 
-    grep -i "warning" scf.out
+    grep -i "warning" scf. out
 
 ### 12. Checking Whether a Calculation Has Finished
 
@@ -303,19 +287,19 @@ For most Quantum ESPRESSO calculations:
 
 For an SCF calculation:
 
-    grep "JOB DONE" scf.out
+    grep "JOB DONE" scf. out
 
 For a phonon calculation:
 
-    grep "JOB DONE" ph.out
+    grep "JOB DONE" ph. out
 
 For a relaxation calculation:
 
-    grep "JOB DONE" relax.out
+    grep "JOB DONE" relax. out
 
 For a relaxation, you can also check:
 
-    grep "End final coordinates" relax.out
+    grep "End final coordinates" relax. out
 
 ### 13. Running Long Calculations with `nohup`
 
@@ -333,7 +317,7 @@ Check whether the calculation is running:
 
 Monitor the output:
 
-    tail -f scf.out
+    tail -f scf. out
 
 ### 14. Using `screen`
 
@@ -389,15 +373,15 @@ Reconnect:
 
 Find a specific file:
 
-    find . -name "scf.in"
+    find. -name "scf.in"
 
 Find all Quantum ESPRESSO output files:
 
-    find . -name "*.out"
+    find. -name "*.out"
 
 Find directories:
 
-    find . -type d -name "out"
+    find. -type d -name "out"
 
 ### 17. Searching Inside Files
 
