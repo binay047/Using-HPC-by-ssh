@@ -289,6 +289,9 @@ List screen sessions:
 Reconnect to the session:
 
     screen -r qe
+Remove the session:
+
+     screen -S qe -X quit
 
 ### 13. Using `tmux`
 * tmux --version
@@ -315,6 +318,9 @@ List tmux sessions:
 Reconnect:
 
     tmux attach -t qe
+
+ Remove:
+ tmux kill-session -t qe
 
 
 ### 14. Checking User and System Information
