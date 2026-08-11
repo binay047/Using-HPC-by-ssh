@@ -50,11 +50,7 @@ Go one directory back:
 
 Return to the home directory:
 
-    cd ~
-
-Return to the previous directory:
-
-    cd -
+    cd 
 
 Show the current directory:
 
@@ -65,22 +61,10 @@ Show the current directory:
 Create a directory:
 
     mkdir directory_name
-
-Create nested directories:
-
-    mkdir -p path/to/directory
-
-Remove an empty directory:
-
-    rmdir directory_name
-
+    
 Remove a directory and its contents:
 
     rm -r directory_name
-
-**Warning:** Use `rm -rf` carefully because it permanently removes files and directories without asking for confirmation.
-
-    rm -rf directory_name
 
 ### 4. Copying and Moving Files Inside HPC
 
