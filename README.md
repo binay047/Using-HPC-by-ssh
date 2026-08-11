@@ -263,6 +263,9 @@ Monitor the output:
 ### 12. Using `screen`
 
 `screen` is useful for keeping a terminal session alive during long calculations.
+* screen --version
+* sudo apt update
+* sudo apt install screen
 
 Start a screen session:
 
@@ -281,13 +284,16 @@ You can now disconnect from SSH.
 
 List screen sessions:
 
-    screen ls
+    screen -ls
 
 Reconnect to the session:
 
     screen -r qe
 
 ### 13. Using `tmux`
+* tmux --version
+* sudo apt update
+* sudo apt install tmux
 
 Start a tmux session:
 
